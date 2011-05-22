@@ -10,13 +10,23 @@ import org.apache.tapestry5.plastic.PlasticClassTransformer;
 import org.apache.tapestry5.plastic.PlasticField;
 import org.apache.tapestry5.plastic.PlasticManager;
 
+/**
+ * Implementation of a ChainBuilder interface using Plastic
+ */
 public class ChainBuilderImpl implements ChainBuilder {
    private PlasticManager pm;
 
+   /**
+    * Constructor
+    * @param pm plastic manager
+    */
    public ChainBuilderImpl(PlasticManager pm) {
       this.pm = pm;
    }
 
+   /**
+    * {@inheritDoc}
+    */
    @SuppressWarnings("unchecked")
    public <T> T build(Class<T> commandInterface, List<T> commands) {
       // Create a new class implementing this interface

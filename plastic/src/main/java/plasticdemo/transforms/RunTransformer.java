@@ -12,9 +12,17 @@ import org.apache.tapestry5.plastic.PlasticMethod;
 
 import plasticdemo.annotations.Run;
 
+/**
+ * Transforms a class into runnable by introducing a Runnable interface. It 
+ * looks for the {@link plasticdemo.annotations.Run Run} annotation
+ * 
+ */
 public class RunTransformer implements PlasticClassTransformer {
    private static final MethodDescription RUN_METHOD = new MethodDescription("void", "run");
 
+   /**
+    * Transform method
+    */
    public void transform(PlasticClass plasticClass) {
       final List<PlasticMethod> methods = plasticClass.getMethodsWithAnnotation(Run.class);
 

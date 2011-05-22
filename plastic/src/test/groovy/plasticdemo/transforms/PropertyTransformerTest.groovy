@@ -5,11 +5,17 @@ import org.apache.tapestry5.plastic.PlasticManager
 
 import spock.lang.Specification
 
+
+/**
+ * Tests {@link plasticdemo.transforms.PropertyTransformer}
+ */
 class PropertyTransformerTest extends Specification {
    def pm
    
    def setup(){
-      pm = PlasticManager.withContextClassLoader().delegate(new StandardDelegate(new PropertyTransformer())).packages(["plasticdemo.controlled"]).create();
+      pm = PlasticManager.withContextClassLoader().delegate(
+         new StandardDelegate(new PropertyTransformer())).
+         packages(["plasticdemo.controlled"]).create();
    }
    
    def "test if setter/getters have been introduced into foo"(){

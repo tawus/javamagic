@@ -7,11 +7,16 @@ import plasticdemo.services.ChainBuilderImpl
 import plasticdemo.services.MyService;
 import spock.lang.Specification
 
+
+/**
+ * Tests {@link plasticdemo.transforms.ChainBuilderImpl}
+ */
 class ChainBuilderTest extends Specification {
    def pm
 
    def setup(){
-      pm = PlasticManager.withContextClassLoader().delegate(new StandardDelegate(new RunTransformer())).packages(["plasticdemo.controlled"]).create();
+      pm = PlasticManager.withContextClassLoader().delegate(new StandardDelegate(new RunTransformer())).
+         packages(["plasticdemo.controlled"]).create();
    }
 
    def "test if foo is runnable"(){

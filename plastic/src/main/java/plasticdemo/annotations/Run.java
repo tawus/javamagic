@@ -5,6 +5,11 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/**
+ * This annotation is used to mark a method as runnable and is used
+ * by {@link plasticdemo.transforms.RunTransformer RunTransformer} to convert the 
+ * container class into a runnable object
+ */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD})
 public @interface Run {
