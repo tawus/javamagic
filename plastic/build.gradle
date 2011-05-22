@@ -1,0 +1,17 @@
+apply plugin: "java"
+apply plugin: "eclipse"
+apply plugin: "maven"
+apply plugin: "groovy"
+
+dependencies {
+   groovy "org.codehaus.groovy:groovy-all:1.7.4"
+   compile "org.apache.tapestry:plastic:5.3.0-SNAPSHOT"
+   testCompile 'org.testng:testng:5.10:jdk15@jar'
+   testCompile "org.spockframework:spock-core:0.4-groovy-1.7"
+   testCompile "junit:junit:4.8.1"  
+}
+repositories {
+   mavenCentral()
+   mavenRepo urls: "http://m2repo.spockframework.org/snapshots"
+   mavenRepo urls:"https://repository.apache.org/content/groups/snapshots/"
+}
