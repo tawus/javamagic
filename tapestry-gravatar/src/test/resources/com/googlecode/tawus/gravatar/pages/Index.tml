@@ -1,0 +1,8 @@
+<html xmlns:t='http://tapestry.apache.org/schema/tapestry_5_1_0.xsd'>
+   <head>
+      <title>Gravatar Demo</title>
+   </head>
+   <body>
+      <t:tawus.gravatar email='tawushafeez@gmail.com' size='200' type='png' rating='g' default='mm' forceDefault='true'/>
+   </body>
+</html>
