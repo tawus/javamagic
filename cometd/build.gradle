@@ -1,0 +1,42 @@
+apply plugin: "java"
+apply plugin: "eclipse"
+apply plugin: "maven"
+
+group="com.googlecode.tawus"
+artifact="tawus-cometd"
+artifactId="tawus-cometd"
+version="0.01-SNAPSHOT"
+
+dependencies {
+   compile "org.apache.tapestry:tapestry-core:5.2.5"
+   compile "org.cometd.java:cometd-java-server:2.2.0"
+   testCompile "org.cometd.java:cometd-java-client:2.2.0"
+   compile "org.cometd.java:cometd-java-annotations:2.2.0"
+   compile "javax.servlet:servlet-api:2.5"
+   testCompile "org.testng:testng:5.14.6"
+   testCompile "org.eclipse.jetty:jetty-webapp:7.4.0.v20110414"
+   compile "log4j:log4j:1.2.14"
+   compile "org.slf4j:slf4j-api:1.6.1"
+   testCompile "org.easymock:easymock:2.5.2"
+   //testCompile("org.eclipse.jetty:jetty-servlets:7.4.0.v20110414"){
+   //}
+
+   testCompile("org.cometd.javascript:cometd-javascript-dojo:2.2.0"){
+      exclude group:"org.dojotoolkit", module:"dojo-war"
+   }
+}
+
+repositories {
+   mavenCentral()
+   mavenRepo urls:"https://repository.apache.org/content/groups/snapshots/"
+}
+
+test {
+   useTestNG()
+   options.suites("src/test/conf/testng.xml")
+   maxHeapSize = "400M"
+   systemProperties["tapestry.service-reloading-enabled"] = "false"
+   jvmArgs("-XX:MaxPermSize=512m")
+   logging.captureStandardOutput LogLevel.INFO 
+   getLogging().setLevel(LogLevel.INFO) 
+}

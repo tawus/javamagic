@@ -1,0 +1,12 @@
+<html xmlns:t='http://tapestry.apache.org/schema/tapestry_5_1_0.xsd'>
+   <head>
+      <script language='javascript'>
+         var config = {
+            contextPath : '${contextPath}'
+            }
+      </script>
+   </head>
+   <body>
+      <div id='body'></div>
+   </body>
+</html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<display-name>Integration tests for Cometd integration with Tapestry5</display-name>
+
+	<context-param>
+		<param-name>tapestry.app-package</param-name>
+		<param-value>com.googlecode.tawus.cometd.examples</param-value>
+	</context-param>
+
+   <!--
+	<filter>
+		<filter-name>cross-origin</filter-name>
+		<filter-class>org.eclipse.jetty.servlets.CrossOriginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>cross-origin</filter-name>
+		<url-pattern>/cometd/*</url-pattern>
+   </filter-mapping>-->
+
+
+	<filter>
+		<filter-name>Test</filter-name>
+		<filter-class>org.apache.tapestry5.TapestryFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>Test</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<welcome-file-list>
+		<welcome-file>TestPage</welcome-file>
+	</welcome-file-list>
+
+</web-app>
+
+
