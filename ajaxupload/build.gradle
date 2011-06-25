@@ -31,3 +31,10 @@ test {
    logging.captureStandardOutput LogLevel.INFO 
    getLogging().setLevel(LogLevel.INFO) 
 }
+
+jar {
+    manifest {
+        attributes 'Tapestry-Module-Classes': 'com.googlecode.tawus.ajaxupload.services.AjaxUploadModule'
+    }
+}
+
