@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Zone Refresh Mixin" annotations="1.5" verbose="2">
+<test name="Unit Tests" enabled="true">
+  <classes>
+      <class name="com.googlecode.tawus.refresh.mixins.ZoneRefreshTest"/>
+   </classes>
+</test>
+<test name="Integration Tests" enabled="true">
+   <parameter name="tapestry.web-app-folder" value="src/test/webapp"/>
+  <classes>
+      <class name="com.googlecode.tawus.refresh.mixins.ZoneRefreshIntegrationTest"/>
+   </classes>
+</test>
+</suite>

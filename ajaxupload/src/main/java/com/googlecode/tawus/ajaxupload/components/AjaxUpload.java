@@ -45,10 +45,8 @@ import org.apache.tapestry5.upload.services.UploadedFile;
 import com.googlecode.tawus.ajaxupload.services.AjaxUploadDecoder;
 
 /**
- * A simple file uploader using <a
+ * An ajax file uploader using <a
  * href='https://github.com/valums/file-uploader'>Valums File Uploader</a>
- * 
- * @author Taha Hafeez
  * 
  */
 @SupportsInformalParameters
@@ -230,8 +228,8 @@ public class AjaxUpload extends AbstractField
    }
 
    /**
-    * Converts the current list of uploaded files to a JSON array with each
-    * element containing the name of the file and a unique key for
+    * Converts the current list of uploaded files to a JSON object containing a json array
+    *  with each element containing the name of the file and a unique key for
     * identification. The unique key is index of the uploaded file in parameter
     * <code>value</code>
     * 
@@ -352,10 +350,8 @@ public class AjaxUpload extends AbstractField
    {
       // We use index of an uploadedFile in 'value' as a key at
       // the client side and if the uploaded file is removed we cleanup and set
-      // the
-      // element at that index to null. As the 'value' may contain null, we need
-      // to
-      // remove those entries in processSubmission()
+      // the element at that index to null. As the 'value' may contain null, we
+      // need to remove those entries in processSubmission()
       if (value != null && serverIndex >= 0 && serverIndex < value.size())
       {
          UploadedFile item = value.get(serverIndex);

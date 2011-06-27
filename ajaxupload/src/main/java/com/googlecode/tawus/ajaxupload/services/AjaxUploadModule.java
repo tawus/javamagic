@@ -12,7 +12,6 @@ import org.apache.tapestry5.ioc.annotations.Autobuild;
 import org.apache.tapestry5.ioc.annotations.Contribute;
 import org.apache.tapestry5.ioc.annotations.InjectService;
 import org.apache.tapestry5.ioc.annotations.Scope;
-import org.apache.tapestry5.ioc.services.PerthreadManager;
 import org.apache.tapestry5.ioc.services.RegistryShutdownHub;
 import org.apache.tapestry5.ioc.services.RegistryShutdownListener;
 import org.apache.tapestry5.services.ComponentClassResolver;
@@ -41,8 +40,8 @@ public class AjaxUploadModule
    }
 
    @Scope(ScopeConstants.PERTHREAD)
-   public static MultipartDecoder buildMultipartDecoder2(PerthreadManager perthreadManager,
-         RegistryShutdownHub shutdownHub, @Autobuild MultipartDecoderImpl multipartDecoder)
+   public static MultipartDecoder buildMultipartDecoder2(RegistryShutdownHub shutdownHub,
+         @Autobuild MultipartDecoderImpl multipartDecoder)
    {
 
       if (needToAddShutdownListener.getAndSet(false))
