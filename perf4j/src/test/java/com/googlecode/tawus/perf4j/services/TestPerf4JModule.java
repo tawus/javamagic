@@ -34,7 +34,6 @@ public class TestPerf4JModule
    
    @Match("TestService")
    public void advisePerf4J(Perf4JServiceAdvisor advisor, MethodAdviceReceiver receiver){
-      System.out.println("Matched here");
       advisor.advise(receiver);
    }
 
