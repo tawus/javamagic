@@ -1,0 +1,7 @@
+<html xmlns:t='http://tapestry.apache.org/schema/tapestry_5_1_0.xsd'>
+   <body>
+   
+   <a href='#' t:type='eventlink' t:event='click'>Click Me And Check the logs</a>
+   
+   </body>
+</html>
