@@ -1,0 +1,35 @@
+<html xmlns:t='http://tapestry.apache.org/schema/tapestry_5_1_0.xsd' xmlns:p='tapestry:parameter'>
+
+   <head>
+      <title>Simple Job Demo</title>
+   </head>
+
+   <body>
+      <h1>Simple Job Demo</h1>
+
+      <div t:type='zone' t:id='zone' t:mixins='zoneRefresh' t:period='5'>
+         <strong>Counter : </strong>
+         ${counterService.value}
+         <br />
+
+         <strong>Is Executing ? </strong>
+         ${periodicJob.executing}
+         <br />
+
+         <strong>Is Cancelled ? </strong>
+         ${periodicJob.canceled}
+         <br />
+
+         <t:if test='periodicJob.canceled'>
+            <a href='#' t:type='eventlink' t:event='restart'>Start Job</a>
+            <p:else>
+               <a href='#' t:type='eventlink' t:event='cancel'>Cancel Job</a>
+            </p:else>
+         </t:if>
+         <t:unless test='periodicJob.canceled'>
+            
+         </t:unless>
+      </div>
+
+   </body>
+</html>

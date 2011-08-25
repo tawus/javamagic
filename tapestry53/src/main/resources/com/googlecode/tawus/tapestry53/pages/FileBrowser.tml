@@ -1,0 +1,11 @@
+<html xmlns:t='http://tapestry.apache.org/schema/tapestry_5_1_0.xsd'>
+
+   <head>
+      <title>File Browser</title>
+   </head>
+   
+   <body>
+      <t:tree model='fileModel'/>'
+   </body>
+   
+</html>

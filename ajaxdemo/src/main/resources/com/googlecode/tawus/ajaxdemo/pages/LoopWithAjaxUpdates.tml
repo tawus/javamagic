@@ -1,0 +1,25 @@
+<html xmlns:t='http://tapestry.apache.org/schema/tapestry_5_1_0.xsd'>
+
+   <body>
+
+      <t:if test='foos'>${foos}</t:if>
+
+      <form t:type='form'>
+      
+         <div t:type='ajaxformloop' t:source='foos' value='foo' encoder='encoder'>
+
+            <label t:type='label' t:for='bar'></label> :
+            <input t:type='textfield' t:id='bar' t:value='foo.bar' />
+            <a href='#' t:type='eventlink' t:event='zoneupdate' t:context='id' t:zone='${uniqueZoneId}' >update</a> | 
+            <t:removerowlink>remove</t:removerowlink> &lt;
+            <span t:type='zone' t:id='zone' id='${uniqueZoneId}'>${foo.bar}</span> &gt; 
+            <br />
+
+         </div>
+         
+         <input type='submit' t:type='submit' value='Submit' />
+      </form>
+
+   </body>
+
+</html>

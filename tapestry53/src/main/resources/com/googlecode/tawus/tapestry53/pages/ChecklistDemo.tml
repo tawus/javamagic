@@ -1,0 +1,24 @@
+<html xmlns:t='http://tapestry.apache.org/schema/tapestry_5_1_0.xsd'>
+   <head>
+      <title>Checklist Demo</title>
+   </head>
+   
+   <body>
+      <h3>Check List Demo</h3>
+      
+      <t:if test='selectedFruits'>
+         <strong>You have selected ${selectedFruits}</strong>
+      </t:if>      
+      
+      <form t:type='form'>
+         <label t:type='label' t:for='checklist'/><br/>
+         
+         <div t:type='checklist' t:id='checklist' t:selected='selectedFruits' encoder='fruitEncoder' model='fruitModel'></div>
+         
+         <input type='submit' name='submit' value='Submit'/>
+         
+      </form>
+   
+   </body>
+   
+</html>

@@ -24,6 +24,7 @@ import org.apache.tapestry5.plastic.MethodInvocation;
 import org.perf4j.StopWatch;
 import org.perf4j.aop.Profiled;
 
+import com.googlecode.tawus.perf4j.services.Perf4JServiceAdvisor;
 import com.googlecode.tawus.perf4j.services.StopWatchSource;
 
 public class Perf4JServiceAdvisorImpl implements Perf4JServiceAdvisor {

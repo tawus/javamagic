@@ -1,0 +1,20 @@
+<html xmlns:t='http://tapestry.apache.org/schema/tapestry_5_1_0.xsd'>
+
+   <body>
+
+      <t:if test='foos'>${foos}</t:if>
+      
+      <form t:type='form'>
+         <div t:type='ajaxformloop' t:source='foos' value='foo' encoder='encoder'>
+            <label t:type='label' t:for='bar'></label>: 
+            <input t:type='textfield' t:id='bar' t:value='foo.bar'/> 
+            <t:removerowlink>remove</t:removerowlink>
+            <br />
+
+         </div>
+         <input type='submit' t:type='submit' value='Submit' />
+      </form>
+   
+   </body>
+   
+</html>

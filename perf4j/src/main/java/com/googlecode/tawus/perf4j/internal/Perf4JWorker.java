@@ -23,6 +23,8 @@ import org.apache.tapestry5.services.transform.ComponentClassTransformWorker2;
 import org.apache.tapestry5.services.transform.TransformationSupport;
 import org.perf4j.aop.Profiled;
 
+import com.googlecode.tawus.perf4j.services.Perf4JServiceAdvisor;
+
 public class Perf4JWorker implements ComponentClassTransformWorker2
 {
    private Perf4JServiceAdvisor advisor;

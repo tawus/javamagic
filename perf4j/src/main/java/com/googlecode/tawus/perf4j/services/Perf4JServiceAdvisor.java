@@ -17,23 +17,21 @@
 package com.googlecode.tawus.perf4j.services;
 
 import org.apache.tapestry5.ioc.MethodAdviceReceiver;
-import org.apache.tapestry5.ioc.ServiceBinder;
-import org.apache.tapestry5.ioc.annotations.Match;
-import org.apache.tapestry5.ioc.annotations.SubModule;
+import org.apache.tapestry5.plastic.MethodAdvice;
+import org.perf4j.aop.Profiled;
 
+/**
+ * A method advisor for profiling a method using Perf4j
+ */
+public interface Perf4JServiceAdvisor
+{
+   /**
+    * Advise a method
+    */
+   void advise(MethodAdviceReceiver receiver);
 
-
-@SubModule(Perf4JModule.class)
-public class TestPerf4JModule
-{ 
-   public static void bind(ServiceBinder binder)
-   {
-      binder.bind(TestService.class);      
-   }
-   
-   @Match("TestService")
-   public void advisePerf4J(Perf4JServiceAdvisor advisor, MethodAdviceReceiver receiver){
-      advisor.advise(receiver);
-   }
-
+   /**
+    * Get advice for profiling
+    */
+   MethodAdvice getAdvice(Profiled annotation, String className);
 }

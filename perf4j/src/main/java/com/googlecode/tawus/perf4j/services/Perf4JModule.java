@@ -22,7 +22,6 @@ import org.apache.tapestry5.ioc.annotations.Contribute;
 import org.apache.tapestry5.services.transform.ComponentClassTransformWorker2;
 
 import com.googlecode.tawus.perf4j.internal.Log4JStopWatchSource;
-import com.googlecode.tawus.perf4j.internal.Perf4JServiceAdvisor;
 import com.googlecode.tawus.perf4j.internal.Perf4JServiceAdvisorImpl;
 import com.googlecode.tawus.perf4j.internal.Perf4JWorker;
 
